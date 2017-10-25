@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dome</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="view">
+        <button @click="counter+=1">该按钮被点击了{{counter}}次</button>
+        <button @click="fun1">点击运行fun1</button>
+        <button @click="say('hi')">say Hi</button>
+        <button @click="say('Hello')">say Hello</button>
+        <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+        <input id="pwd" type="password" name="" @keyup.ctrl.67="submitt">
+    </div>
+    
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="vueScript.js"></script>
+</body>
+
+</html>

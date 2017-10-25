@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dome</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="view">
+        <my-component></my-component>
+        
+        <input v-model="parentMsg">
+        <br>
+        <child :my-message="parentMsg"></child>
+        <hr>
+        <v-input v-model="price"></v-input >
+
+        <hr>
+        <div>
+          <h1>我是父组件的标题</h1>
+          <child-com>
+          </child-com>
+        </div>
+
+    </div>
+    <hr>
+
+    <div id="example">
+            <p>{{total}}</p>
+            <inc-button v-on:inc-event="totalInc"></inc-button>
+            <inc-button v-on:inc-event="totalInc"></inc-button>
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script src="vueScript.js"></script>
+</body>
+
+</html>

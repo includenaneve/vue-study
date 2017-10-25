@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dome</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="view">
+        <input v-model="message" placeholder="enter something">
+        <p>{{message}}</p> 
+        <hr>
+
+        <input type="checkbox" v-model="checked" id="checkbox1">
+        <label for="checkbox1">{{checked}}</label>
+        
+        <hr>
+
+        <input type="checkbox"  v-model="checkArray" value="a1"><label for="a1">a1</label>
+        <input type="checkbox"  v-model="checkArray" value="a2"><label for="a2">a2</label>
+        <input type="checkbox"  v-model="checkArray" value="a3"><label for="a3">a3</label>
+        <p>
+            {{checkArray}}
+        </p>
+        
+        <hr>
+        <input type="radio"  v-model="radioArray" value="a1"><label for="a1">a1</label>
+        <input type="radio"  v-model="radioArray" value="a2"><label for="a2">a2</label>
+        <input type="radio"  v-model="radioArray" value="a3"><label for="a3">a3</label>
+        <p>
+            {{radioArray}}
+        </p>
+        <hr>
+
+        <select v-model="selected">
+            <option v-for="option in options" :value="option.value">
+                {{option.text}}
+            </option>
+        </select>
+        <p>{{selected}}</p>
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script src="vueScript.js"></script>
+</body>
+
+</html>

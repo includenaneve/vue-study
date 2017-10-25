@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dome1</title>
+    <style type="text/css">
+        .normal{
+            width:100px;
+            height: 50px;
+            box-shadow: 1px 1px 1px 1px black;
+        }
+        .active{
+            background-color: gray;
+        }
+        .textDanger{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <!-- example1 -->
+    <div id="app">
+        <p>{{ message }}</p>
+    </div>
+    
+    <!-- example2 -->
+    <div id="app-2">
+        <span v-bind:title="message">
+            查看信息
+        </span>
+    </div>
+
+    <!-- example3 -->
+    <div id="app-3">
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+
+    <!-- example4 -->
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>    
+    </div>
+    
+    <!-- example5 -->
+    <div id="app-5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+
+    <!-- example6 -->
+    <div id="app-6">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+    
+    <div id="app-7">
+        <ol>
+            <todo-item 
+                v-for="item in groceryList"
+                v-bind:todo="item"
+                v-bind:key="item.id">
+            </todo-item>
+        </ol>
+    </div>
+
+    <div id='example'>
+        <p>{{message}}</p>
+        <p>{{reverseMessage}}</p>
+    </div>
+
+    <div id="demo">
+        {{fullName}}
+    </div>
+    
+    <div id="s" class="normal" v-bind:class="{active:isActive,textDanger:hasError}">文字</div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="vueScript.js"></script>
+</body>
+
+</html>

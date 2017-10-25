@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dome</title>
+</head>
+<body>
+    <div id="main">
+        <div v-if="ok">yes</div>
+        <div v-else>no</div>
+
+        <template v-if="ok2">
+            <ol>
+                <li>asd</li>
+                <li>qwewq</li>
+                <li>eqweasd</li>
+                <li>sdfaf</li>
+                <li>qwewqe</li>
+            </ol>
+        </template>
+
+        <div v-if="type==='A'">A</div>
+        <div v-else-if="type==='B'">B</div>
+        <div v-else-if="type==='C'">C</div>
+        <div v-else>others</div>
+
+        <hr><br>
+        
+        <template v-if="login === 'username' ">
+            <label>Username</label><input type="text" placeholder="请输入用户名">
+        </template>
+        <template v-else>
+            <label>Email</label><input type="text" placeholder="请输入邮箱">
+        </template>
+        <button v-on:click="switchMessage">点击切换</button>
+        
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script src="vueScript.js"></script>
+</body>
+
+</html>

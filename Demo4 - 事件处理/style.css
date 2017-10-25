@@ -1,0 +1,8 @@
+button{
+    display: block;
+    margin-top: 10px;
+    height: 40px;
+    width: 500px;
+    font-size: 26px;
+    line-height: 40px;
+}

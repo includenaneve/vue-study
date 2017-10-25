@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="view">
+        <ul>
+            <li v-for="item in newsList">
+                {{item.text}}
+            </li>
+        </ul>
+        <hr>
+        <!-- 你也可以用 of 替代 in 作为分隔符，因为它是最接近 JavaScript 迭代器的语法： -->
+        <ul v-for="(item,index) of List">
+            <li>
+                {{parents}} - {{index}} - {{item.text}}
+            </li>
+        </ul>
+        <hr>
+        <!-- 遍历对象 key value index-->
+        <ul v-for="(value,key,index) of object">
+            <li>
+                {{index}}.{{key}} : {{value}}
+            </li>
+        </ul>
+        <hr>
+        
+        <!-- 在计算属性不适用的情况下 (例如，在嵌套 v-for 循环中) 你可以使用一个 method 方法： -->
+        <ul>
+            <li v-for="n in evenNumbers">
+                {{n}}
+            </li>
+        </ul>
+        <hr>
+        <!-- v-for 也可以取整数。在这种情况下，它将重复多次模板。 -->
+        <div>
+            <span v-for="n of 10">
+                {{n}}
+            </span>
+        </div>
+        <hr>
+
+        <ul>
+            <template v-for="item in message">
+                <li>{{item.name}}</li>
+                <li>{{item.password}}</li>
+                <button>点击输入</button>
+            </template>
+        </ul>
+        <hr>
+
+        <ul>
+            <li v-for="num in numbers" v-if="num>3">{{num}}</li>
+        </ul>
+
+
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script src="vueScript.js"></script>
+</body>
+
+</html>
